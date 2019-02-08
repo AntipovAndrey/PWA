@@ -1,6 +1,4 @@
-import {ADD_TODO, TOGGLE_TODO, GET_SAVED_TODO, REMOVE_TODO} from './types';
-
-export const getSavedTodos = () => ({type: GET_SAVED_TODO});
+import {ADD_TODO, TOGGLE_TODO, REMOVE_TODO} from './types';
 
 export const addTodo = todo => ({type: ADD_TODO, payload: todo});
 
