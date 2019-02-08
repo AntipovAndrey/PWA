@@ -1,10 +1,37 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="ru.andrey.pwa">
+          xmlns:tools="http://schemas.android.com/tools" package="ru.andrey.pwa">
 
-    <application android:allowBackup="true"
-        android:label="@string/app_name"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme"/>
+    <application
+            android:allowBackup="true"
+            android:label="@string/app_name"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            tools:ignore="AllowBackup">
+
+        <activity android:name="android.support.customtabs.trusted.LauncherActivity">
+
+            <meta-data
+                    android:name="android.support.customtabs.trusted.DEFAULT_URL"
+                    android:value="http://192.168.1.53:5000"/>
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                        android:scheme="http"
+                        android:host="192.168.1.53:5000"/>
+            </intent-filter>
+
+        </activity>
+    </application>
+
 </manifest>
