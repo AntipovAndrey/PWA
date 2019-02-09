@@ -16,7 +16,7 @@ const AddTodo = ({addTodo}) => {
       }}>
       <label htmlFor="title">
         Title:
-        <input id="title" ref={node => (input = node)}/>
+        <input autoComplete="off" id="title" ref={node => (input = node)}/>
       </label>
 
       <button type="submit">Add Todo</button>

@@ -8,10 +8,7 @@ const TodoListItem = ({todo, onToggled, onRemoved}) => (
       textDecorationLine: todo.completed ? 'line-through' : ''
     }}
     onClick={onToggled}>
-    <span onClick={e => {
-      e.preventDefault();
-      onRemoved();
-    }}> [x] </span>
+    <span> [</span><span onClick={onRemoved}>x</span><span>] </span>
     {todo.title}
   </div>
 );
