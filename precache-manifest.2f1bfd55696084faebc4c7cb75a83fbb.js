@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "94712826b2f97131bc05",
-    "url": "/PWA/static/js/main.94712826.chunk.js"
+    "revision": "cce57b23977ee10651d7",
+    "url": "/PWA/static/js/main.cce57b23.chunk.js"
   },
   {
     "revision": "57ec6bbdc2eda1187fde",
@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/PWA/static/js/runtime~main.95c8360f.js"
   },
   {
-    "revision": "4c70c487366b6d4e52b32e7595fd6888",
+    "revision": "509fc9a8d4a604064b42690accc698db",
     "url": "/PWA/index.html"
   }
 ];
