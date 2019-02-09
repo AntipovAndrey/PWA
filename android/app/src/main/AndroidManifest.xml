@@ -12,9 +12,8 @@
 
         <activity android:name="android.support.customtabs.trusted.LauncherActivity">
 
-            <meta-data
-                    android:name="android.support.customtabs.trusted.DEFAULT_URL"
-                    android:value="http://192.168.1.53:5000"/>
+            <meta-data android:name="android.support.customtabs.trusted.DEFAULT_URL"
+                       android:value="${defaultUrl}"/>
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -26,12 +25,9 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
 
-                <data
-                        android:scheme="http"
-                        android:host="192.168.1.53:5000"/>
+                <data android:scheme="https"
+                      android:host="${hostName}"/>
             </intent-filter>
-
         </activity>
     </application>
-
 </manifest>

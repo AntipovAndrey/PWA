@@ -9,6 +9,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                hostName  : "antipovandrey.github.io/PWA/",
+                defaultUrl: "https://antipovandrey.github.io/PWA/",
+        ]
     }
     buildTypes {
         release {
