@@ -12,6 +12,10 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup">
 
+        <meta-data
+                android:name="asset_statements"
+                android:value="${assetStatements}"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

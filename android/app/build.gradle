@@ -14,7 +14,9 @@ android {
 
         manifestPlaceholders = [
                 hostName       : "antipovandrey.github.io/PWA/",
-                defaultUrl     : "https://antipovandrey.github.io/PWA/"
+                defaultUrl     : "https://antipovandrey.github.io/PWA/",
+                assetStatements: '[{ "relation": ["delegate_permission/common.handle_all_urls"], ' +
+                        '"target": {"namespace": "web", "site": "https://antipovandrey.github.io/PWA/"}}]'
         ]
     }
     buildTypes {
@@ -30,11 +32,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'com.github.GoogleChrome.custom-tabs-client:customtabs:3a71a75c9f'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()
