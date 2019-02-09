@@ -1,25 +1,28 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {addTodo, removeTodo, toggleTodo} from '../actions';
+import {removeTodo, toggleTodo} from '../actions';
 import TodoListItem from './TodoListItem';
 
-const TodoList = props => (
+const TodoList = ({todo, toggleTodo, removeTodo}) => (
   <>
-    {props.todo.map(todo => createItem(todo, props.toggleTodo))}
+    {mapReversed(todo, t => createItem(t, toggleTodo, removeTodo))}
   </>
 );
 
-const createItem = (todo, onToggled) => {
+const mapReversed = (arr, cb) => arr.map((_, index) => cb(arr[arr.length - 1 - index]));
+
+const createItem = (todo, onToggled, onRemoved) => {
   return <TodoListItem key={todo.id}
                        todo={todo}
-                       inToggled={() => onToggled(todo.id)}/>
+                       onToggled={() => onToggled(todo.id)}
+                       onRemoved={() => onRemoved(todo.id)}/>
 };
 
 const mapStateToProps = state => ({
-  todo: Object.values(state.todo)
+  todo: state.todo
 });
 
 export default connect(mapStateToProps,
-  {addTodo, toggleTodo, removeTodo}
+  {toggleTodo, removeTodo}
 )(TodoList);
