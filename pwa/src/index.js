@@ -9,6 +9,7 @@ import storage from 'redux-persist/lib/storage';
 import * as serviceWorker from './serviceWorker';
 
 import App from './components/App';
+import Loading from './components/Loading';
 import reducers from './reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -22,12 +23,13 @@ const store = createStore(persistReducer(persistConfig, reducers), composeEnhanc
 
 ReactDOM.render(
   <Provider store={store}>
-    <PersistGate loading={null} persistor={persistStore(store)}>
+    <PersistGate loading={<Loading/>} persistor={persistStore(store)}>
       <App/>
     </PersistGate>
-  </Provider>
-  , document.getElementById('root')
-);
+    <
+    /Provider>
+    , document.getElementById('root')
+    );
 
 
-serviceWorker.register();
+    serviceWorker.register();
