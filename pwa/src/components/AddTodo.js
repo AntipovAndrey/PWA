@@ -14,7 +14,11 @@ const AddTodo = ({addTodo}) => {
           input.value = '';
         }
       }}>
-      <input ref={node => (input = node)}/>
+      <label htmlFor="title">
+        Title:
+        <input id="title" ref={node => (input = node)}/>
+      </label>
+
       <button type="submit">Add Todo</button>
     </form>
   );
