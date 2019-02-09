@@ -29,6 +29,8 @@ In order to be accepted by Google Play your PWA has to meet the same requirement
 + Served over ```HTTPS```
 + Has registered a service worker with a fetch event handler
 
+Built signed apk can be found here — [debug](https://github.com/AntipovAndrey/PWA/tree/master/android/app/debug) [release](https://github.com/AntipovAndrey/PWA/tree/master/android/app/release)
+
 ## Screenshots
 
 Main (native) screen                            |  TWA with Digital Asset Link                    |  Same PWA opened in Chrome
