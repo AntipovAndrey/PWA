@@ -13,11 +13,16 @@ const styles = theme => ({
   },
 });
 
-const TodoList = ({todo, toggleTodo, removeTodo, classes}) => (
-  <List className={classes.root}>
-    {mapReversed(todo, t => createItem(t, toggleTodo, removeTodo))}
-  </List>
-);
+const TodoList = ({todo, toggleTodo, removeTodo, classes}) => {
+  if (!todo.length) {
+    return null;
+  }
+  return (
+    <List className={classes.root}>
+      {mapReversed(todo, t => createItem(t, toggleTodo, removeTodo))}
+    </List>
+  );
+};
 
 const mapReversed = (arr, cb) => arr.map((_, index) => cb(arr[arr.length - 1 - index]));
 
