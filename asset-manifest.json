@@ -1,11 +1,11 @@
 {
-  "main.js": "/PWA/static/js/main.f8de7624.chunk.js",
-  "main.js.map": "/PWA/static/js/main.f8de7624.chunk.js.map",
-  "static/js/1.57ec6bbd.chunk.js": "/PWA/static/js/1.57ec6bbd.chunk.js",
-  "static/js/1.57ec6bbd.chunk.js.map": "/PWA/static/js/1.57ec6bbd.chunk.js.map",
+  "main.js": "/PWA/static/js/main.ba5539a3.chunk.js",
+  "main.js.map": "/PWA/static/js/main.ba5539a3.chunk.js.map",
+  "static/js/1.94c23d69.chunk.js": "/PWA/static/js/1.94c23d69.chunk.js",
+  "static/js/1.94c23d69.chunk.js.map": "/PWA/static/js/1.94c23d69.chunk.js.map",
   "runtime~main.js": "/PWA/static/js/runtime~main.95c8360f.js",
   "runtime~main.js.map": "/PWA/static/js/runtime~main.95c8360f.js.map",
   "index.html": "/PWA/index.html",
-  "precache-manifest.0b9bde9916223010e595cc51a172f8c2.js": "/PWA/precache-manifest.0b9bde9916223010e595cc51a172f8c2.js",
+  "precache-manifest.200b0d0d5c84a010ff6c7b075b576654.js": "/PWA/precache-manifest.200b0d0d5c84a010ff6c7b075b576654.js",
   "service-worker.js": "/PWA/service-worker.js"
 }
