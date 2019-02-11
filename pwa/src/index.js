@@ -26,10 +26,8 @@ ReactDOM.render(
     <PersistGate loading={<Loading/>} persistor={persistStore(store)}>
       <App/>
     </PersistGate>
-    <
-    /Provider>
-    , document.getElementById('root')
-    );
+  </Provider>,
+  document.getElementById('root')
+);
 
-
-    serviceWorker.register();
+serviceWorker.register();
