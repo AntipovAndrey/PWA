@@ -6,7 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 import TodoList from './TodoList';
 import AddTodo from './AddTodo';
@@ -34,18 +34,20 @@ const App = ({classes}) => (
       <MuiThemeProvider theme={theme}>
         <CssBaseline/>
         <AppBar position="fixed">
-          <Toolbar>
+          <Toolbar variant="dense">
             <Typography variant="h6" color="inherit" className={classes.grow}>
               ToDo
             </Typography>
             <GitHubLink/>
           </Toolbar>
         </AppBar>
-        <Paper>
-          <div className={classes.toolbar}/>
-          <AddTodo/>
-          <TodoList/>
-        </Paper>
+        <div className={classes.toolbar}/>
+        <Grid container justify="center">
+          <Grid item xs={12} lg={8} xl={6}>
+            <AddTodo/>
+            <TodoList/>
+          </Grid>
+        </Grid>
       </MuiThemeProvider>
     </div>
   </>
