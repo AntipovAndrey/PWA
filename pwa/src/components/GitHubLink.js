@@ -1,10 +1,14 @@
 import React from 'react';
+import IconButton from '@material-ui/core/IconButton';
+
+import GitHub from "./ui/GitHub";
 
 const GitHubLink = () => {
   return (
     <>
-      Visit <a href="https://github.com/AntipovAndrey">GitHub</a>
-      <p/>
+      <IconButton href="https://github.com/AntipovAndrey" color="inherit">
+        <GitHub/>
+      </IconButton>
     </>
   );
 };
