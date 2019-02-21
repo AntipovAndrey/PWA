@@ -34,21 +34,29 @@ const renderTodoTextField = ({input, ...other}) => (
     {...other}/>
 );
 
+const onSubmit = (addTodo, reset, formValues) => {
+  addTodo(formValues.todo);
+  reset();
+};
+
 const AddTodo = ({addTodo, classes, handleSubmit, reset}) => {
+  const onFormSubmit = onSubmit.bind(null, addTodo, reset);
   return (
-    <form className={classes.form} onSubmit={handleSubmit(formValues => {
-      if (formValues.todo) {
-        addTodo(formValues.todo);
-        reset();
-      }
-    })}>
-      <Field name="todo"
-             className={classes.textField}
-             component={renderTodoTextField}/>
+    <form className={classes.form} onSubmit={handleSubmit(onFormSubmit)}>
+      <Field name="todo" className={classes.textField} component={renderTodoTextField}/>
     </form>
   );
 };
 
-export default connect(null, {addTodo})(reduxForm({
-  form: 'addTodo'
-})(withStyles(styles)(AddTodo)));
+const styledAddTodo = withStyles(styles)(AddTodo);
+
+const reduxFormAddTodo = reduxForm({
+  form: 'addTodo',
+  enableReinitialize: true
+})(styledAddTodo);
+
+const mapStateToPropsForm = state => ({
+  initialValues: {todo: state.onetimeParameters.todo}
+});
+
+export default connect(mapStateToPropsForm, {addTodo})(reduxFormAddTodo);

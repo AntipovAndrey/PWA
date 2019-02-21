@@ -17,6 +17,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const persistConfig = {
   key: 'root',
   storage,
+  whitelist: ['todo']
 };
 
 const store = createStore(persistReducer(persistConfig, reducers), composeEnhancers());
