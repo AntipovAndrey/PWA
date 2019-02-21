@@ -2,10 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {withStyles} from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import {Field, reduxForm} from 'redux-form';
 
 import {addTodo} from '../actions';
 
-const styles = theme => ({
+const styles = {
   container: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -19,32 +20,35 @@ const styles = theme => ({
     marginLeft: 15,
     marginRight: 15,
   },
-});
+};
 
-const AddTodo = ({addTodo, classes}) => {
-  let input;
+const renderTodoTextField = ({input, ...other}) => (
+  <TextField
+    id="outlined-with-placeholder"
+    label="Enter todo here"
+    placeholder="Todo"
+    margin="normal"
+    variant="outlined"
+    autoComplete="off"
+    {...input}
+    {...other}/>
+);
+
+const AddTodo = ({addTodo, classes, handleSubmit, reset}) => {
   return (
-    <form
-      className={classes.form}
-      onSubmit={e => {
-        e.preventDefault();
-        if (input.value.trim()) {
-          addTodo(input.value);
-          input.value = '';
-        }
-      }}>
-
-      <TextField
-        id="outlined-with-placeholder"
-        label="Enter todo here"
-        placeholder="Todo"
-        className={classes.textField}
-        margin="normal"
-        variant="outlined"
-        autoComplete="off"
-        inputRef={node => (input = node)}/>
+    <form className={classes.form} onSubmit={handleSubmit(formValues => {
+      if (formValues.todo) {
+        addTodo(formValues.todo);
+        reset();
+      }
+    })}>
+      <Field name="todo"
+             className={classes.textField}
+             component={renderTodoTextField}/>
     </form>
   );
 };
 
-export default connect(null, {addTodo})(withStyles(styles)(AddTodo));
+export default connect(null, {addTodo})(reduxForm({
+  form: 'addTodo'
+})(withStyles(styles)(AddTodo)));

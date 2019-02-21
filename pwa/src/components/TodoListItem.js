@@ -9,7 +9,6 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
 const styles = theme => ({
   completed: {
-
     textDecorationLine: 'line-through',
   },
   trash: {
