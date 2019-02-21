@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">PWA</string>
-    <string name="description">I\'m a native part of the application.\nClick on the button below to open Trusted Web Activity with a Progressive Web App.\n\nChrome 72 or above is required</string>
+    <string name="description">I\'m a native part of the application.\nClick on the button below to open Trusted Web
+        Activity with a Progressive Web App.\n\nChrome 72 or above is required.
+    </string>
+    <string name="input_description">Text, entered below will appears in the opened ToDo app (optional)</string>
+
     <string name="open_twa_button_text">Open TWA</string>
+    <string name="todo_text_hint">ToDo text</string>
 </resources>
