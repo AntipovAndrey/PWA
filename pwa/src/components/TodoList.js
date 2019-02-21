@@ -27,7 +27,8 @@ const TodoList = ({todo, toggleTodo, removeTodo, classes}) => {
 const mapReversed = (arr, cb) => arr.map((_, index) => cb(arr[arr.length - 1 - index]));
 
 const createItem = (todo, onToggled, onRemoved) => {
-  return <TodoListItem todo={todo}
+  return <TodoListItem key={todo.id}
+                       todo={todo}
                        onToggled={() => onToggled(todo.id)}
                        onRemoved={() => onRemoved(todo.id)}/>
 };
